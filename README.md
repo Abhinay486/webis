@@ -2,6 +2,30 @@ Act as an expert frontend developer. I want to create a web application called "
 
 The project consists of two main views: a Home Page (Directory) and a Member Detail Page.
 
+## Google Sheets data source
+
+To load live profile records, publish the worksheet as CSV in Google Sheets and paste
+the resulting URL into `GOOGLE_SHEET_CSV_URL` in `mockData.js`:
+
+```text
+File > Share > Publish to web > choose the worksheet > Comma-separated values
+```
+
+The sheet should use these column headers:
+
+| Sheet column | Used as |
+| --- | --- |
+| Full name | Profile name |
+| Date of birth | Birthday |
+| Residence | Location |
+| Working as | Occupation |
+| Contact no | Phone number |
+| Photo | Google Drive image link |
+
+For a Drive photo, set the file's sharing access so that anyone with the link can
+view it. Both `drive.google.com/file/d/<id>/view` and `drive.google.com/open?id=<id>`
+links are converted automatically to an image URL by the app.
+
 1. DATA STRUCTURE (mockData.js)
 Create a mock JSON array of member objects. Each object should have the following properties: 
 - id (string)
